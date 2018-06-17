@@ -49,10 +49,10 @@ const paxes = [
 const boarding = new BoardingService.create();
 
 
-console.log(boarding.sort(paxes));
+//console.log(boarding.sort(paxes));
 
 const newAdapter = new lettersAdapter.create();
 
 const boarding2 = new BoardingService.create([newAdapter], 'letters');
 
-//console.log(boarding2.sort('ticket.row', paxes));
+console.log(boarding2.sort(paxes));

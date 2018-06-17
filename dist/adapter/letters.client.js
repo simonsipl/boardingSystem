@@ -24,7 +24,19 @@ var LettersClient = function () {
         key: 'sort',
         value: function sort(arr) {
 
-            return [{ name: 'Adam', ticket: { row: 1, sector: 'A' } }, { name: 'Adam', ticket: { row: 2, sector: 'F' } }, { name: 'Adam', ticket: { row: 3, sector: 'B' } }, { name: 'Adam', ticket: { row: 2, sector: 'E' } }, { name: 'Adam', ticket: { row: 20, sector: 'D' } }, { name: 'Adam', ticket: { row: 15, sector: 'C' } }];
+            var sortedSeats = arr.sort(function (a, b) {
+                var seatA = a.ticket.sector;
+                var seatB = b.ticket.sector;
+                if (seatA === 'A' && seatB !== 'F' || seatA === 'F' && seatB !== 'A' || seatA === 'B' && seatB !== 'A' && seatB !== 'F' && seatB !== 'E' || seatA === 'E' && seatB !== 'A' && seatB !== 'F' && seatB !== 'B') {
+                    return -1;
+                } else if (seatB === 'A' && seatA !== 'F' || seatB === 'F' && seatA !== 'A' || seatB === 'B' && seatA !== 'A' && seatA !== 'F' && seatA !== 'E' || seatB === 'E' && seatA !== 'A' && seatA !== 'F' && seatA !== 'B' || seatB === 'D' && seatA !== 'A' && seatA !== 'F' && seatA !== 'E' && seatA == 'B' || seatB === 'C' && seatA !== 'A' && seatA !== 'F' && seatA !== 'E' && seatA == 'B') {
+                    return 1;
+                } else {
+                    return 0;
+                }
+            });
+
+            return sortedSeats;
         }
     }]);
 
