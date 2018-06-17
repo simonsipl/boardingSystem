@@ -24,3 +24,13 @@ test('sorting letters', () => {
             { name: 'Adam', ticket: { row: 20, sector: 'D' } } ]
     )
 });
+
+test('is satisfiedBy type', () => {
+    const lettersClient = create();
+    expect(lettersClient.isSatisfiedBy('letters')).toEqual(true)
+});
+
+test('Error if not satisfiedBy type', () => {
+    const lettersClient = create();
+    expect(lettersClient.isSatisfiedBy('rows')).toEqual(false)
+});
