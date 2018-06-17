@@ -1,5 +1,5 @@
 const BoardingService = require('./dist/boarding.service');
-
+const lettersAdapter =  require('./dist/adapter/letters.client.js');
 
 const paxes = [
     {
@@ -48,4 +48,13 @@ const paxes = [
 
 const boarding = new BoardingService.create();
 
+
 console.log(boarding.sort('ticket.row', paxes));
+
+const newAdapter = new lettersAdapter.create();
+
+const boarding2 = new BoardingService.create([newAdapter], 'letters');
+
+console.log(boarding2)
+
+console.log(boarding2.sort('ticket.row', paxes));

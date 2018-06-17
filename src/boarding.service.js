@@ -1,6 +1,5 @@
 import {create as createRowsAdapter} from './adapter/rows.client.js';
 
-
 class BoardingService {
     constructor(type, defaultAdapters) {
         this.type = type;
