@@ -7,7 +7,7 @@ class LettersClient {
         return type === 'letters';
     }
 
-    sort() {
+    sort(arr) {
 
         return [
             { name: 'Adam', ticket: { row: 1, sector: 'A' } },
