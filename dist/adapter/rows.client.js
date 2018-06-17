@@ -23,7 +23,7 @@ var RowsClient = function () {
     }, {
         key: 'sort',
         value: function sort() {
-            var prop = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'ticket';
+            var prop = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'ticket.row';
             var arr = arguments[1];
 
             // add sub function for get value from obj (1/2)
