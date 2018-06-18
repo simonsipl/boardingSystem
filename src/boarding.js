@@ -1,19 +1,19 @@
 const seatingStrategies = require('./seatStrategies');
 
 class Boarding {
-    constructor(type) {
-        this.type = type;
+    constructor() {
         this.strategy = seatingStrategies.default;
     }
 
-    selectStrategy() {
-       this.strategy = seatingStrategies[this.type]
+    selectStrategy(type) {
+       this.strategy = seatingStrategies[type];
+       return this;
     }
 
-    start(paxes) {
+    startBoarding(paxes) {
         const x = this.strategy;
         return x.sortSeats(paxes);
     }
 }
 
-module.exports = new Boarding();
+module.exports = Boarding;

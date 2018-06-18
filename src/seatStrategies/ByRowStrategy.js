@@ -1,5 +1,4 @@
 class ByRowStrategy {
-
     sortSeats(paxes) {
         return paxes.sort(function(a, b) {
             var seatA = a.ticket.row;

@@ -44,7 +44,10 @@ const paxes = [
         }
     }
 ];
+const test = new boarding();
+console.log(test.startBoarding(paxes));
 
-const test = boarding.start(paxes);
+let x = test.selectStrategy('BySectorStrategy');
+console.log(x.startBoarding(paxes));
 
-console.log(test);
+

@@ -7,21 +7,21 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 var seatingStrategies = require('./seatStrategies');
 
 var Boarding = function () {
-    function Boarding(type) {
+    function Boarding() {
         _classCallCheck(this, Boarding);
 
-        this.type = type;
         this.strategy = seatingStrategies.default;
     }
 
     _createClass(Boarding, [{
         key: 'selectStrategy',
-        value: function selectStrategy() {
-            this.strategy = seatingStrategies[this.type];
+        value: function selectStrategy(type) {
+            this.strategy = seatingStrategies[type];
+            return this;
         }
     }, {
-        key: 'start',
-        value: function start(paxes) {
+        key: 'startBoarding',
+        value: function startBoarding(paxes) {
             var x = this.strategy;
             return x.sortSeats(paxes);
         }
@@ -30,4 +30,4 @@ var Boarding = function () {
     return Boarding;
 }();
 
-module.exports = new Boarding();
+module.exports = Boarding;
