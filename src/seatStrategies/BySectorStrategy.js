@@ -1,5 +1,9 @@
 class BySectorStrategy {
     sortSeats(paxes) {
+        if(!Array.isArray(paxes)){
+            throw Error('Seat list is not an array');
+        }
+
         let sortedSeats = paxes.sort(function(a, b) {
             let seatA = a.ticket.sector;
             let seatB = b.ticket.sector;

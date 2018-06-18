@@ -12,6 +12,10 @@ var BySectorStrategy = function () {
     _createClass(BySectorStrategy, [{
         key: 'sortSeats',
         value: function sortSeats(paxes) {
+            if (!Array.isArray(paxes)) {
+                throw Error('Seat list is not an array');
+            }
+
             var sortedSeats = paxes.sort(function (a, b) {
                 var seatA = a.ticket.sector;
                 var seatB = b.ticket.sector;

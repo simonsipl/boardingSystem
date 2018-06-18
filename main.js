@@ -1,53 +1,23 @@
 const boarding = require('./dist/boarding');
+const paxes = require('./paxes');
 
-const paxes = [
-    {
-        name: 'Adam',
-        ticket: {
-            row: 1,
-            sector: 'A'
-        }
-    },
-    {
-        name: 'Adam',
-        ticket: {
-            row: 20,
-            sector: 'D'
-        }
-    },
-    {
-        name: 'Adam',
-        ticket: {
-            row: 2,
-            sector: 'F'
-        }
-    },
-    {
-        name: 'Adam',
-        ticket: {
-            row: 15,
-            sector: 'C'
-        }
-    },
-    {
-        name: 'Adam',
-        ticket: {
-            row: 3,
-            sector: 'B'
-        }
-    },
-    {
-        name: 'Adam',
-        ticket: {
-            row: 2,
-            sector: 'E'
-        }
+class start {
+    start(paxes) {
+
+        console.log('Strategia Defaultowa = ByRowStrategy');
+
+        let test = new boarding();
+        console.log(test.startBoarding(paxes));
+
+        console.log('Strategia ustawiana = BySectorStrategy');
+
+
+        test = test.selectStrategy('BySectorStrategy');
+        console.log(test.startBoarding(paxes));
     }
-];
-const test = new boarding();
-console.log(test.startBoarding(paxes));
 
-let x = test.selectStrategy('BySectorStrategy');
-console.log(x.startBoarding(paxes));
+}
 
 
+const run = new start();
+run.start(paxes);

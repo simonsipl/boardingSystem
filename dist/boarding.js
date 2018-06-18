@@ -22,8 +22,8 @@ var Boarding = function () {
     }, {
         key: 'startBoarding',
         value: function startBoarding(paxes) {
-            var x = this.strategy;
-            return x.sortSeats(paxes);
+            var boardingStrategy = this.strategy;
+            return boardingStrategy.sortSeats(paxes);
         }
     }]);
 

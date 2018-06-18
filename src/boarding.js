@@ -11,8 +11,8 @@ class Boarding {
     }
 
     startBoarding(paxes) {
-        const x = this.strategy;
-        return x.sortSeats(paxes);
+        const boardingStrategy = this.strategy;
+        return boardingStrategy.sortSeats(paxes);
     }
 }
 
