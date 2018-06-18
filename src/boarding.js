@@ -1,4 +1,4 @@
-const seatingStrategies = require('./seatStrategies');
+import seatingStrategies from './seatStrategies';
 
 class Boarding {
     constructor() {
@@ -6,6 +6,11 @@ class Boarding {
     }
 
     selectStrategy(type) {
+
+        if(seatingStrategies[type] === undefined){
+            throw Error('Boarding system is not available in configuration');
+        }
+
        this.strategy = seatingStrategies[type];
        return this;
     }
