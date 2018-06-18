@@ -3,8 +3,7 @@ v10.4.1
 
 ### Opis
 
-Przykładowy adapter do systemu boardingu, możemy podpiąć swoje własne adaptery 
-z różnymi systemami sortowania pasażerów
+Na zasadzie strategii
 
 ### Dodatkowe pakiety do testów i budowania
 ```bash
