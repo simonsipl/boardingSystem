@@ -23,19 +23,17 @@ var RowsClient = function () {
     }, {
         key: 'sort',
         value: function sort(arr) {
-            var sortedSeats = arr.sort(function (a, b) {
+            return arr.sort(function (a, b) {
                 var seatA = a.ticket.row;
                 var seatB = b.ticket.row;
-                if (seatA < seatB) {
+                if (seatA > seatB) {
                     return -1;
-                } else if (seatA > seatB) {
+                } else if (seatA < seatB) {
                     return 1;
                 } else {
                     return 0;
                 }
             });
-
-            return sortedSeats.reverse();
         }
     }]);
 
