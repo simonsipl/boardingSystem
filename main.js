@@ -1,5 +1,20 @@
 const BoardingService = require('./dist/boarding.service');
-const lettersAdapter =  require('./dist/adapter/letters.client.js');
+const lettersAdapter = require('./dist/adapter/letters.client.js');
+
+function start(array) {
+    const boarding = new BoardingService.create();
+    console.log('Sort by rows');
+    console.log(boarding.sort(paxes));
+
+    const newAdapter = new lettersAdapter.create();
+
+    let boarding2 = new BoardingService.create([],'letters');
+    boarding2.addAdapter(newAdapter);
+
+    console.log('sort by letters');
+    console.log(boarding2.sort(paxes));
+
+}
 
 const paxes = [
     {
@@ -46,12 +61,5 @@ const paxes = [
     }
 ];
 
-const boarding = new BoardingService.create();
-console.log('Sort by rows');
-console.log(boarding.sort(paxes));
 
-const newAdapter = new lettersAdapter.create();
-
-const boarding2 = new BoardingService.create([newAdapter], 'letters');
-console.log('sort by letters');
-console.log(boarding2.sort(paxes));
+start(paxes);

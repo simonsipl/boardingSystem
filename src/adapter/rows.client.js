@@ -7,7 +7,6 @@ class RowsClient {
         return type === 'rows';
     }
 
-
     sort(arr) {
         let sortedSeats = arr.sort(function(a, b) {
             var seatA = a.ticket.row;

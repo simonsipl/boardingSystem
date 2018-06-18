@@ -41,6 +41,11 @@ var BoardingService = function () {
             }
             return adapter;
         }
+    }, {
+        key: 'addAdapter',
+        value: function addAdapter(adapter) {
+            this.availableAdapters.push(adapter);
+        }
     }]);
 
     return BoardingService;

@@ -22,6 +22,10 @@ class BoardingService {
         }
         return adapter;
     }
+
+    addAdapter(adapter) {
+        this.availableAdapters.push(adapter);
+    }
 }
 
 const rowsAdapter = createRowsAdapter();
